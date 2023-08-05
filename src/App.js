@@ -18,7 +18,7 @@ const App = () => {
 
         {/*]}*/}
 
-        {/*   <Simpsons/>*/}
+           <Simpsons/>
 <Characters/>
         </div>
     );
