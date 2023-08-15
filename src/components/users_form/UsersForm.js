@@ -5,7 +5,7 @@ import {usersRequests} from "../../api/requests/usersRequests";
 const UsersForm = ({setUsers}) => {
    const{register, handleSubmit,reset, formState:{errors, isValid}}= useForm({mode:'all'})
    const submit=async (data)=>{
-    await  usersRequests.createUser(data).then(({data})=> setUsers((prev)=>[...prev, data]))
+    await  usersRequests.createUser(data).then(({data})=> setUsers((prevState)=>[...prevState, data]))
        reset()
    }
     return (

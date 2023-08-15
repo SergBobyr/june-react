@@ -1,6 +1,5 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
-import {usersRequests} from "../../api/requests/usersRequests";
 import {commentRequests} from "../../api/requests/commentRequests";
 
 const CommentsForm = ({setComments}) => {
@@ -11,7 +10,7 @@ const CommentsForm = ({setComments}) => {
     }
     return (
         <form onSubmit={handleSubmit(submit)}>
-            <input type={"text"} placeholder='name of comment' {...register('username')}/>
+            <input type={"text"} placeholder='name of comment' {...register('name')}/>
             <button>Create new comment</button>
         </form>
     );
