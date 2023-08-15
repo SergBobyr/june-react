@@ -21,6 +21,14 @@ useEffect(()=>{
 
  }
 
+ const update=async (car)=>{
+    const{data}=await carService.updateById(updateCar.id, car)
+     if (Object.keys(data).length){
+         const {data}= await carService.getAll()
+         setCars(data)
+     }
+ }
+
     return (
         //
         // <form onSubmit={handleSubmit(submit)}>
@@ -42,7 +50,7 @@ useEffect(()=>{
         //     <button>Save</button>
         // </form>
 
-    <form onSubmit={handleSubmit(submit)}>
+    <form onSubmit={handleSubmit(updateCar ? update:submit)}>
         <input type="text" placeholder={'brand'} {...register('brand'
         )}/>
         {errors.brand&&<span>{errors.brand.message}</span>}
